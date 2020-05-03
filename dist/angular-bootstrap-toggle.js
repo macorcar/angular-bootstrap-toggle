@@ -209,18 +209,24 @@
 
 						// Calculate the proper width
 						if (!self.width) {
-							self.width = (Math.max(
+              var width = (Math.max(
 								dupOnElement.scrollWidth,
 								dupOffElement.scrollWidth
-							) + 2) + 'px';
+							) + 2);
+              if (width < 30) { width = 57;}
+							self.width = width + 'px';
 						}
 
 						// Calculate the proper height
 						if (!self.height) {
-							self.height = (Math.max(
+              var height = (Math.max(
 								dupOnElement.scrollHeight,
 								dupOffElement.scrollHeight
-							) + 2) + 'px';
+							) + 2);
+              
+              if (height < 20) { height = 34; }
+              
+							self.height = height + 'px';
 						}
 
 						// Remove the duplicated elements
